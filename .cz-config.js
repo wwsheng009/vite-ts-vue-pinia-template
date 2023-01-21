@@ -1,4 +1,3 @@
-
 module.exports = {
   types: [
     { value: 'feature', name: 'feature:  增加新功能' },
