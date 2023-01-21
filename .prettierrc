@@ -1,0 +1,21 @@
+{
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "endOfLine": "auto",
+    "singleQuote": true,
+    "quoteProps": "as-needed",
+    "jsxSingleQuote": false,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "rangeStart": 0,
+    "arrowParens": "always",
+    "vueIndentScriptAndStyle": false,
+    "htmlWhitespaceSensitivity": "ignore",
+    "overrides": [{
+        "files": "*.html",
+        "options": {
+            "parser": "html"
+        }
+    }]
+}
