@@ -1,5 +1,3 @@
-index.html
-package.json
 *.sh
 *.md
 *.woff
@@ -14,3 +12,4 @@ Dockerfile
 /public
 /docs
 /bi
+.npmrc
