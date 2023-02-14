@@ -1,50 +1,15 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
+// import routes from './router.config';
+import { ROOT_ROUTE, LOGIN_ROUTE } from './routes/basic';
 
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/login',
-    name: 'Login',
-    meta: {
-      title: '登录',
-      keepAlive: true,
-      requireAuth: false,
-    },
-    component: () => import('@/pages/login.vue'),
-  },
-  {
-    path: '/vueuse',
-    name: 'VueUser',
-    meta: {
-      title: 'VueUse 演示',
-      keepAlive: true,
-      requireAuth: false,
-    },
-    component: () => import('@/pages/vueUse.vue'),
-  },
-  {
-    path: '/lessdemo',
-    name: 'LessDemo',
-    meta: {
-      title: 'Less 演示',
-      keepAlive: true,
-      requireAuth: false,
-    },
-    component: () => import('@/pages/less.vue'),
-  },
-  {
-    path: '/',
-    name: 'Index',
-    meta: {
-      title: '首页',
-      keepAlive: true,
-      requireAuth: true,
-    },
-    component: () => import('@/pages/index.vue'),
-  },
-];
-
-const router = createRouter({
-  history: createWebHistory(),
-  routes,
+// app router
+export const router = createRouter({
+  // 解决 二级路径存在时，路径地址路由不匹配的问题
+  // https://juejin.cn/post/7051826951463370760#heading-27
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [ROOT_ROUTE, LOGIN_ROUTE],
+  strict: true,
+  scrollBehavior: () => ({ left: 0, top: 0 }),
 });
+
 export default router;

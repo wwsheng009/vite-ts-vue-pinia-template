@@ -1,18 +1,38 @@
-# Vue 3 + TypeScript + Vite
+# vue3 + ts + pinia + vite模板
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## 配置vite
 
-## Recommended IDE Setup
+## 代码规范
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+工具：husky、eslint、prettier
 
-## Type Support For `.vue` Imports in TS
+- 结合VsCode编辑器（保存时自动执行格式化：editor.formatOnSave: true）
+- 配合Git hooks钩子（commit前或提交前执行：pre-commit => npm run lint:lint-staged）
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+### 配置eslint
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+### 配置prettier
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+### 配置git-cz
+
+## vue能力支持
+```json
+{
+    // "@vitejs/plugin-legacy": "^1.6.2", // 低版本浏览器兼容
+    "@vitejs/plugin-vue": "^1.9.3", // vue 支持
+    "@vitejs/plugin-vue-jsx": "^1.2.0", // jsx 支持
+}
+```
+
+## 状态管理器
+配置pinia
+
+## 配置router
+
+## 配置axios
+
+
+## UI组件按需加载、自动导入
+
+- vite-plugin-style-import 不再推荐
+- unplugin-vue-components 推荐

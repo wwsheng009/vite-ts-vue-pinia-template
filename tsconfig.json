@@ -2,7 +2,7 @@
   "compilerOptions": {
     "typeRoots": [
       "node_modules/@types", // 默认值
-      "src/types"
+      "typing"
     ],
     "forceConsistentCasingInFileNames": true,
     "target": "ESNext",
@@ -11,18 +11,55 @@
     "moduleResolution": "Node",
     "strict": true,
     "jsx": "preserve",
+    "allowJs": true,
+    "sourceMap": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "lib": ["ESNext", "DOM"],
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "types": [
+      "vite/client"
+    ],
+    "noImplicitAny": false,
     "skipLibCheck": true,
     "noEmit": true,
     "baseUrl": "./",
     "paths": {
-      "@": ["src"],
-      "@/*": ["src/*"]
+      "@": [
+        "src"
+      ],
+      "@/*": [
+        "src/*"
+      ],
+      "/#/*": [
+        "src/types/*"
+      ],
+      "$/*": [
+        "build/*"
+      ]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "typing/**/*.d.ts",
+    "typing/**/*.ts",
+    "mock/**/*.ts"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "exclude": [
+    "node_modules",
+    "tests/server/**/*.ts",
+    "dist",
+    "**/*.js"
+  ]
 }

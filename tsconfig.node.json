@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "types": [
+      "vite/client"
+    ],
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "composite": true,
@@ -7,5 +10,11 @@
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["vite.config.ts"]
+  "include": [
+    "vite.config.ts",
+    "build/vite/**/*.ts",
+    "build/vite/**/*.d.ts",
+    "build/config/**/*.ts",
+    "build/config/**/*.d.ts",
+  ]
 }
